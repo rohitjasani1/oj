@@ -1,0 +1,14 @@
+---------- Date: 2017-12-17 19:27:54 ~ IP : 49.35.35.245 ----------
+REQUEST URI : /admin/index.php?route=setting/setting&token=wjMgO7qMHUCbHKGjJJA8AWm7PsGVoGdw
+MOD DETAILS:
+   modFile   : /var/www/html/ornatenew/vqmod/xml/simple_blog.ocmod.xml
+   id        : 
+   version   : 1.0
+   vqmver    : 
+   author    : Opcrat
+
+File Name    : admin/controller/setting/setting.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): //   if (isset($this->request->post['config_logo'])) {
+----------------------------------------------------------------------
+
+

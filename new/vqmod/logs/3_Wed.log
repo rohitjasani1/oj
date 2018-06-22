@@ -1,0 +1,58 @@
+---------- Date: 2018-04-25 15:50:37 ~ IP : ::1 ----------
+REQUEST URI : /new/
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/a_vqmod_d_social_login.xml
+   id        : d_social_login
+   version   : 2.x
+   vqmver    : 2.4.1
+   author    : dreamvention.com
+VQModObject::parseMods - Could not resolve path for [admin/model/sale/customer.php] (SKIPPED)
+
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/newslettersubscription.xml
+   id        : Indian Rupee Symbol
+   version   : 2.0
+   vqmver    : 2.4.1
+   author    : IRSSOFT
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/menu.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/menu.tpl] (SKIPPED)
+
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/vqmod_install.xml
+   id        : 
+   version   : 1.0
+   vqmver    : 
+   author    : donghai
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/menu.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/menu.tpl] (SKIPPED)
+
+File Name    : system/library/document.php(2)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): return $this->scripts;
+
+File Name    : catalog/controller/startup/seo_url.php(4)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): //	($data['route'] == 'information/information' && $key == 'information_id')
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/wocmailchimp.xml
+   id        : Wocmailchimp
+   version   : 1
+   vqmver    : 1
+   author    : 
+VQModObject::parseMods - Could not resolve path for [catalog/controller/module/journal2_newsletter.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [catalog/controller/module/journal2_newsletter.php] (SKIPPED)
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-04-25 16:09:03 ~ IP : ::1 ----------
+REQUEST URI : /new/admin/index.php?route=setting/setting&token=cFLNfVYcF9qSAYRFJgferd06ZkB9JOLu
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/simple_blog.ocmod.xml
+   id        : 
+   version   : 1.0
+   vqmver    : 
+   author    : Opcrat
+
+File Name    : admin/controller/setting/setting.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): //   if (isset($this->request->post['config_logo'])) {
+----------------------------------------------------------------------
+
+

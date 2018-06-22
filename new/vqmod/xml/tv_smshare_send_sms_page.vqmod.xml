@@ -1,0 +1,88 @@
+<modification>
+	<id><![CDATA[smshare-oc2-extension]]></id>
+	<version><![CDATA[4.1.0]]></version>
+	<author><![CDATA[dev@smshare.fr - http://www.smshare.fr]]></author>
+	<vqmver><![CDATA[2.5.1]]></vqmver>
+    
+    
+    
+    
+	
+	<file name="admin/controller/common/menu.php">
+		<operation>
+			<search position="after"><![CDATA[$data['text_contact'] = $this->language->get('text_contact');]]></search>
+			<add><![CDATA[
+                $data['text_smshare_sms'] = $this->language->get('text_smshare_sms');
+            ]]></add>
+		</operation>
+        
+		<operation>
+			<search position="after"><![CDATA[$data['contact'] = $this->url->link('marketing/contact', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+			<add><![CDATA[
+                //get version
+                
+                if(version_compare(VERSION, '2.1.0.1') >= 0){
+                    $data['smshare_sms'] = $this->url->link('marketing/smshare_sms21', 'token=' . $this->session->data['token'], 'SSL');
+                }else{
+                    $data['smshare_sms'] = $this->url->link('marketing/smshare_sms20', 'token=' . $this->session->data['token'], 'SSL');
+                }
+            ]]></add>
+		</operation>
+        
+	</file>
+    
+	<file name="admin/view/template/common/menu.tpl">
+		<operation>
+			<search position="after"><![CDATA[<li><a href="<?php echo $contact; ?>"><?php echo $text_contact; ?></a></li>]]></search>
+			<add><![CDATA[
+                <li><a href="<?php echo $smshare_sms; ?>"><?php echo $text_smshare_sms; ?></a></li>
+            ]]></add>
+		</operation>
+	</file>
+    
+	<file name="admin/language/english/common/menu.php">
+		<operation>
+			<search position="after"><![CDATA[$_['text_contact']                     = 'Mail';]]></search>
+			<add><![CDATA[
+                $_['text_smshare_sms']                     = 'SMS';
+            ]]></add>
+		</operation>
+	</file>
+    
+	<file name="admin/model/sale/order.php">
+		<operation>
+			<search position="before"><![CDATA[getEmailsByProductsOrdered]]></search>
+			<add><![CDATA[
+                public function getCustomerIdsByProductsOrdered($products, $start, $end) {
+                    $implode = array();
+            
+                    foreach ($products as $product_id) {
+                        $implode[] = "op.product_id = '" . (int)$product_id . "'";
+                    }
+            
+                    $query = $this->db->query("SELECT DISTINCT customer_id FROM `" . DB_PREFIX . "order` o LEFT JOIN " . DB_PREFIX . "order_product op ON (o.order_id = op.order_id) WHERE (" . implode(" OR ", $implode) . ") AND o.order_status_id <> '0' LIMIT " . (int)$start . "," . (int)$end);
+            
+                    return $query->rows;
+                }
+            ]]></add>
+		</operation>
+        
+		<operation>
+			<search position="before"><![CDATA[getTotalEmailsByProductsOrdered]]></search>
+			<add><![CDATA[
+                public function getTotalTelephonesByProductsOrdered($products) {
+                    $implode = array();
+            
+                    foreach ($products as $product_id) {
+                        $implode[] = "op.product_id = '" . (int)$product_id . "'";
+                    }
+            
+                    $query = $this->db->query("SELECT DISTINCT telephone FROM `" . DB_PREFIX . "order` o LEFT JOIN " . DB_PREFIX . "order_product op ON (o.order_id = op.order_id) WHERE (" . implode(" OR ", $implode) . ") AND o.order_status_id <> '0'");
+            
+                    return $query->row['total'];
+                }
+            ]]></add>
+		</operation>
+	</file>
+    
+</modification>

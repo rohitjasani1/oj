@@ -1,0 +1,38 @@
+@media (min-width:1025px) and (max-width:1400px) {}
+
+@media (min-width:993px) and (max-width:1024px) {
+	
+}
+
+@media (min-width:573px) and (max-width:768px){
+.product-detail-main .product-detail {
+    float: left;
+    width: 52%;
+    padding: 0 0 0 17px;
+}
+	
+}
+
+@media (min-width:768px) and (max-width:992px) {}
+
+@media (max-width:767px){}
+
+@media (max-width:480px){}
+
+/* iphone 6+ landscape */
+@media only screen and (min-device-width :414px) and (max-device-width :736px) and (orientation : landscape) {}
+
+
+/* iphone 6 + */
+@media only screen and (min-device-width :414px) and (max-device-width : 420px) and (orientation : portrait) {}
+
+/* iphone 6 portrait */
+@media only screen and (min-device-width : 374px) and (max-device-width : 375px) and (orientation : portrait) {}
+
+/* iphone 6 landscape */
+@media only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape) {
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : Portrait) {}
+
+@media (max-width:320px) {}

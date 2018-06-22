@@ -1,0 +1,26 @@
+---------- Date: 2018-06-14 11:42:59 ~ IP : ::1 ----------
+REQUEST URI : /new/admin/index.php?route=tool/log&token=Drb5S1fzGexZTgxtlkGj8nzxVSUKjfEr
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/tv_smshare_send_sms_page.vqmod.xml
+   id        : smshare-oc2-extension
+   version   : 4.1.0
+   vqmver    : 2.5.1
+   author    : dev@smshare.fr - http://www.smshare.fr
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/menu.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/menu.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/language/english/common/menu.php] (SKIPPED)
+
+File Name    : system/library/language.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): public function load($filename) {
+
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/wocmailchimp.xml
+   id        : Wocmailchimp
+   version   : 1
+   vqmver    : 1
+   author    : 
+VQModObject::parseMods - Could not resolve path for [catalog/controller/module/journal2_newsletter.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [catalog/controller/module/journal2_newsletter.php] (SKIPPED)
+----------------------------------------------------------------------
+
+

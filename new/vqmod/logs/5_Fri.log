@@ -1,0 +1,60 @@
+---------- Date: 2018-06-15 10:44:52 ~ IP : ::1 ----------
+REQUEST URI : /new/admin/index.php?route=extension/modification/refresh&token=vtKflYcK9X6rn6Zo1W7aC2Fctwk4wRi6
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/tv_smshare.vqmod.xml
+   id        : smshare-oc2-extension
+   version   : 4.1.0
+   vqmver    : 2.5.1
+   author    : dev@smshare.fr - http://www.smshare.fr
+
+File Name    : system/library/language.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): public function load($filename) {
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-06-15 10:48:22 ~ IP : ::1 ----------
+REQUEST URI : /new/index.php?route=product/product&path=83&product_id=521
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/tv_smshare.vqmod.xml
+   id        : smshare-oc2-extension
+   version   : 4.1.0
+   vqmver    : 2.5.1
+   author    : dev@smshare.fr - http://www.smshare.fr
+
+File Name    : system/library/language.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): public function load($filename) {
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-06-15 10:50:24 ~ IP : ::1 ----------
+REQUEST URI : /new/index.php?route=product/product&path=83&product_id=521
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/tv_smshare.vqmod.xml
+   id        : smshare-oc2-extension
+   version   : 4.1.0
+   vqmver    : 2.5.1
+   author    : dev@smshare.fr - http://www.smshare.fr
+
+File Name    : system/library/language.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): public function load($filename) {
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2018-06-15 12:05:51 ~ IP : ::1 ----------
+REQUEST URI : /new/admin/index.php?route=extension/extension&token=IFIfYILpT1l8HogtXfxQeVMoKVWin26s
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\new\vqmod/xml/tv_smshare.vqmod.xml
+   id        : smshare-oc2-extension
+   version   : 4.1.0
+   vqmver    : 2.5.1
+   author    : dev@smshare.fr - http://www.smshare.fr
+
+File Name    : system/library/language.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): public function load($filename) {
+
+----------------------------------------------------------------------
+
+

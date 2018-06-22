@@ -1,0 +1,77 @@
+<modification>
+    <id><![CDATA[smshare-oc2-extension]]></id>
+    <version><![CDATA[4.1.0]]></version>
+    <author><![CDATA[dev@smshare.fr - http://www.smshare.fr]]></author>
+    <vqmver><![CDATA[2.5.1]]></vqmver>
+    
+    
+    
+    
+    
+    
+    <file name="system/engine/loader.php">
+        <operation>
+            <search position="before"><![CDATA[public function model]]></search>
+            <add><![CDATA[
+    /**
+     * Load a component which is a shared model between catalog/admin webapps.
+     */
+    public function component($model) {
+        $file = DIR_SYSTEM . 'component/' . $model . '.php';
+        $class = 'Component' . preg_replace('/[^a-zA-Z0-9]/', '', $model);
+
+        if (file_exists($file)) {
+            include_once($file);
+
+            $this->registry->set('component_' . str_replace('/', '_', $model), new $class($this->registry));
+        } else {
+            trigger_error('Error: Could not load model ' . $file . '!');
+            exit();
+        }
+    }
+            ]]></add>
+        </operation>
+        
+        <operation>
+            <search position="before"><![CDATA[public function language]]></search>
+            <add><![CDATA[
+    /**
+     * Load a common/language which is a shared language between catalog/admin webapps.
+     * First introduced because of oc2.1.0.1 which acts on catalog while previous versions where acting on admin (order status update #vqmod)
+     */
+    public function language_common($language) {
+        return $this->registry->get('language')->load_common($language);
+    }
+            ]]></add>
+        </operation>
+    </file>
+    
+    <file name="system/library/language.php">
+        <operation>
+            <search position="before"><![CDATA[public function load($filename) {]]></search>
+            <add><![CDATA[
+    public function load_common($filename) {
+        $_ = array();
+
+        $file = DIR_SYSTEM . 'common/language/' . $this->default . '/' . $filename . '.php';
+
+        if (file_exists($file)) {
+            require($file);
+        }
+
+        $file = DIR_SYSTEM . 'common/language/' . $this->directory . '/' . $filename . '.php';
+
+        if (file_exists($file)) {
+            require($file);
+        }
+
+        $this->data = array_merge($this->data, $_);
+
+        return $this->data;
+    }
+                
+            ]]></add>
+        </operation>
+    </file>
+    
+</modification>

@@ -1,0 +1,23 @@
+<modification>
+    <id><![CDATA[smshare-oc2-extension]]></id>
+    <version><![CDATA[4.1.0]]></version>
+    <author><![CDATA[dev@smshare.fr - http://www.smshare.fr]]></author>
+    <vqmver><![CDATA[2.5.1]]></vqmver>
+    
+    
+    
+    
+    
+    <file name="catalog/model/checkout/order.php">
+        <operation info="notify on checkout">
+            <search position="after"><![CDATA[if (!$order_info['order_status_id'] && $order_status_id) {]]></search>
+            <add><![CDATA[       
+         
+                $this->load->model('module/smshare');
+                $this->model_module_smshare->send_sms_on_new_order($order_id);
+            
+            ]]>
+            </add>
+        </operation>
+    </file>
+</modification>

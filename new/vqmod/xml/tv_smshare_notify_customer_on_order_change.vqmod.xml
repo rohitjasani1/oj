@@ -1,0 +1,52 @@
+<modification>
+    <id><![CDATA[smshare-oc2-extension]]></id>
+    <version><![CDATA[4.1.0]]></version>
+    <author><![CDATA[dev@smshare.fr - http://www.smshare.fr]]></author>
+    <vqmver><![CDATA[2.5.1]]></vqmver>
+    
+    
+    
+    
+    
+    <file name="admin/view/template/sale/order_info.tpl">
+        
+        <operation info="show the notify_by_sms checkbox">
+            <search position="after" offset="2"><![CDATA[<input type="checkbox" name="notify" value="1" id="input-notify" />]]></search>
+            <add><![CDATA[
+                <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-notify-by-sms" style="padding-top: 0;"><span data-toggle="tooltip" title="The SMS content is the template for order status change if setup in the smshare module configuration, otherwise it will be the comment below. Note that, the comment is still available to use in a template through the {comment} variable.">Notify Customer by SMS</span></label>
+                  <div class="col-sm-10">
+                    <input type="checkbox" name="notify_by_sms" value="1" id="input-notify-by-sms" />
+                  </div>
+                </div>
+            ]]></add>
+        </operation>
+        
+        
+        <operation info="submit notify_by_sms too">
+            <search position="replace"><![CDATA[+ '&notify=' +]]></search>
+            <add><![CDATA[+ '&notify_by_sms=' + ($('input[name=\'notify_by_sms\']').prop('checked') ? 1 : 0) + '&notify=' +]]></add>
+        </operation>
+        
+    </file>
+    
+    
+<!-- ==================================================================================
+    Opencart >= 2.1.0.1 and oc 2.0 ... dup ars: 2dee3
+    Didn't take full line in search pattern because powertrack appends some parameters.
+=================================================================================== -->
+    <file name="catalog/controller/api/order.php">
+        <operation error="log">
+            <search position="before"><![CDATA[$this->model_checkout_order->addOrderHistory($order_id, $this->request->post['order_status_id']]]></search>
+            <add><![CDATA[
+                $this->load->component('smshare/dao');
+                $notificationResponse = $this->component_smshare_dao->notify_or_not_customer_by_sms_after_history_add_by_id_param($this->request->get['order_id'], $this->request->post, $order_info);
+                    
+                if(isset($notificationResponse['error'])) {
+                    $json['error'] = $notificationResponse['error'];
+                }
+            ]]></add>
+        </operation>
+    </file>
+    
+</modification>

@@ -1,0 +1,25 @@
+<modification>
+    <id><![CDATA[smshare-oc2-extension]]></id>
+    <version><![CDATA[4.1.0]]></version>
+    <author><![CDATA[dev@smshare.fr - http://www.smshare.fr]]></author>
+    <vqmver><![CDATA[2.5.1]]></vqmver>
+    
+    
+    
+    
+    
+    <file name="catalog/model/account/customer.php">
+        <operation info="Send sms to customer or admins on registration if no scar #51">
+            <search position="before"><![CDATA[// Send to main admin email if new account email is enabled]]></search>
+            <add><![CDATA[       
+            
+                if ($this->config->get('smshare_cfg_log')) $this->log->write("[smshare][VQMOD] Call on_registration");
+                $this->load->model('module/smshare');
+                $this->model_module_smshare->on_registration($data, $customer_id);
+            
+            ]]>
+            </add>
+        </operation>
+    </file>
+    
+</modification>
